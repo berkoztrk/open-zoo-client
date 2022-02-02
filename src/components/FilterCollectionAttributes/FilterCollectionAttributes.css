@@ -125,5 +125,8 @@
 
 .is__dark .attribute-filter-container .MuiSlider-root .MuiSlider-valueLabel span span {
   color: white !important;
+}
 
+.is__dark .attribute-filter-container .MuiChip-root {
+  background: #00a59a ;
 }
