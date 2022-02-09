@@ -69,6 +69,10 @@ export function FilterCollectionAttributes({
     }
   };
 
+  const capitalizeFirstLetter = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   const renderOptions = () => {
     if (!filterData) return;
 
@@ -94,7 +98,7 @@ export function FilterCollectionAttributes({
             <Checkbox style={checkboxStyle} checked={state.selected} />
           </Grid>
           <Grid item xs={6}>
-            {option.value}
+            {capitalizeFirstLetter(option.value)}
           </Grid>
           <Grid style={{ textAlign: 'right' }} item xs={3}>
             <Chip style={chipStyle} label={`${option.count}`} size="small" />
@@ -118,7 +122,7 @@ export function FilterCollectionAttributes({
 
     const numericInputTemplate = (key, data) => (
       <Grid className="input-container" key={key} item xs={12} md={3}>
-        <h6>{key}</h6>
+        <h6>{capitalizeFirstLetter(key)}</h6>
         <p className="slider-info">
           <strong>Between:</strong>{' '}
           {key in formData
@@ -152,7 +156,7 @@ export function FilterCollectionAttributes({
 
     const autoCompleteInputTemplate = (key, data) => (
       <Grid className="input-container" key={key} item xs={12} md={3}>
-        <h6>{key}</h6>
+        <h6>{capitalizeFirstLetter(key)}</h6>
         {
           <Autocomplete
             PopperComponent={popperTemplate}
